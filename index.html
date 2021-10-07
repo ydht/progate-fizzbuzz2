@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Progate Week 3 - Fizzbuzz 2</title>
+    </head>
+  
+    <body>
+        <h1>Get a Fizzbuzz Result!</h1>
+        <p>Type a number: 
+        <input id = "number" type = "text">
+        <button onclick="fizzbuzz()">Click here!</button>
+        </p>
+        <hr>
+        <div id = "demo"></div>
+      
+        <script>
+            const fizzbuzz = () => {
+                const i = document.getElementById("number").value;
+                const result = document.createElement("p");
+              
+                if (i === "0") {
+                    result.innerHTML = "invalid input";
+                } else {
+                  
+                    if (i % 3 === 0) {
+                        if (i % 5 === 0) {
+                            result.innerHTML += "Fizzbuzz!";
+                        } else {
+                            result.innerHTML += "Fizz!";
+                        }
+                    } else if (i % 5 === 0) {
+                        result.innerHTML += "Buzz!";
+                    } else {
+                        result.innerHTML += `${i}`;
+                    };
+                  
+                };
+              
+                const divDemo = document.getElementById("demo");
+                divDemo.append(result);
+            };
+        </script>
+      
+    </body>
+</html>
